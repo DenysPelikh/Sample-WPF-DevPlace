@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:InteractiveApp.MouseEvents"
         xmlns:common="clr-namespace:InteractiveApp.MouseEvents.Common"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525" Closed="MainWindow_Closed">
     <Window.Resources>
         <common:BorderConverter x:Key="BorderConverter"/>
     </Window.Resources>
-    <Grid x:Name="MainGrid">
+    <Grid x:Name="MainGrid" IsHitTestVisible="True">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" 
                               MinWidth="{Binding ElementName=LeftControllStackPanel, Path=ActualWidth}"
@@ -19,21 +19,21 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Border Grid.Column="0"  Background="Coral" />
+        <Border Grid.Column="0"  Background="#00A897" />
         <StackPanel Name="LeftControllStackPanel" Grid.Column="0" HorizontalAlignment="Left" Orientation="Vertical">
             <Button Content="New Window"
                     HorizontalContentAlignment="Center"
-                    MinWidth="90"
+                    MinWidth="130"
                     MinHeight="30"
                     Margin="10,10,10,10"
-                    Padding="5"/>
+                    Background="#FFEFF2BC" Foreground="#FF28708C" BorderBrush="{x:Null}" FontFamily="Vani" FontSize="18" Height="30" Focusable="False" Click="NewWindow_Button_Click"/>
         </StackPanel>
 
         <GridSplitter Grid.Column="1" Width="5" 
-                      HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Brown" BorderBrush="Bisque" BorderThickness="1,0,1,0">
+                      HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#05668C" BorderBrush="#28708C" BorderThickness="1,0,1,0">
         </GridSplitter>
 
-        <Border Grid.Column="2"  Background="BurlyWood" />
+        <Border Grid.Column="2" Background="#01C198" />
         <Canvas Grid.Column="2" Name="CircleContainCanvas">
 
         </Canvas>
